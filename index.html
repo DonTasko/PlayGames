@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slots Demo — DonTasko</title>
+<title>Slots Demo Grátis — Jogos Demo dos Melhores Fornecedores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
+    --bg: #09090e;
     --surface: #111118;
-    --card: #16161f;
-    --border: #2a2a3a;
+    --card: #14141c;
+    --border: #252535;
     --gold: #f0c040;
     --gold2: #e8a820;
-    --red: #e84040;
+    --accent: #ff6b35;
     --text: #e8e8f0;
-    --muted: #6a6a88;
+    --muted: #5a5a78;
     --radius: 12px;
   }
 
@@ -30,150 +30,150 @@
     overflow-x: hidden;
   }
 
-  /* ---- HEADER ---- */
+  /* HEADER */
   header {
-    background: linear-gradient(180deg, #0f0f1a 0%, transparent 100%);
-    padding: 0 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(12px);
+    background: rgba(9,9,14,0.92);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
 
   .header-inner {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    height: 64px;
+    gap: 1.5rem;
+    height: 60px;
   }
 
   .logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
     color: var(--gold);
     text-decoration: none;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
   }
-  .logo span { color: var(--text); }
+  .logo span { color: var(--text); opacity: 0.7; }
 
   .search-wrap {
     flex: 1;
-    max-width: 400px;
+    max-width: 380px;
     position: relative;
   }
-
   .search-wrap input {
     width: 100%;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    padding: 0.45rem 1rem 0.45rem 2.4rem;
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     outline: none;
     transition: border-color 0.2s;
   }
+  .search-wrap input::placeholder { color: var(--muted); }
   .search-wrap input:focus { border-color: var(--gold); }
-  .search-wrap .icon {
+  .search-wrap svg {
     position: absolute;
-    left: 0.75rem;
+    left: 0.7rem;
     top: 50%;
     transform: translateY(-50%);
     color: var(--muted);
-    font-size: 0.9rem;
     pointer-events: none;
   }
 
-  /* ---- HERO ---- */
+  .header-count {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+  .header-count strong { color: var(--gold); }
+
+  /* HERO */
   .hero {
     text-align: center;
-    padding: 3rem 2rem 1.5rem;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a1030 0%, transparent 70%);
+    padding: 2.5rem 1.5rem 1rem;
+    background: radial-gradient(ellipse 100% 80% at 50% -10%, rgba(240,192,64,0.06) 0%, transparent 60%);
   }
-
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    letter-spacing: 4px;
-    line-height: 1;
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: 5px;
     color: var(--gold);
-    text-shadow: 0 0 40px rgba(240,192,64,0.3);
-    margin-bottom: 0.5rem;
+    text-shadow: 0 0 60px rgba(240,192,64,0.2);
+    margin-bottom: 0.4rem;
   }
+  .hero p { color: var(--muted); font-size: 0.9rem; }
 
-  .hero p {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-
-  /* ---- FILTERS ---- */
-  .filters {
+  /* FILTERS */
+  .filters-bar {
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem 1.5rem;
+    margin: 1.25rem auto 0;
+    padding: 0 1.5rem 1.25rem;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
     align-items: center;
   }
-
   .filter-label {
-    color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-right: 0.5rem;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-right: 0.25rem;
+    flex-shrink: 0;
   }
-
   .pill {
     background: var(--surface);
     border: 1px solid var(--border);
     color: var(--muted);
-    padding: 0.35rem 1rem;
+    padding: 0.3rem 0.9rem;
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     cursor: pointer;
     transition: all 0.15s;
     font-family: 'DM Sans', sans-serif;
     white-space: nowrap;
   }
-  .pill:hover { border-color: var(--gold); color: var(--gold); }
+  .pill:hover { border-color: var(--gold); color: var(--text); }
   .pill.active { background: var(--gold); border-color: var(--gold); color: #000; font-weight: 600; }
 
-  /* ---- GRID ---- */
+  /* MAIN */
   .main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem 4rem;
+    padding: 0 1.5rem 4rem;
   }
 
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    color: var(--muted);
-    margin-bottom: 1rem;
+  .section-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    margin-bottom: 1rem;
   }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: var(--muted);
   }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
 
+  /* GRID */
   #games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.9rem;
   }
 
   .game-card {
@@ -184,99 +184,107 @@
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     position: relative;
-    aspect-ratio: 3/4;
     display: flex;
     flex-direction: column;
   }
-
   .game-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    border-color: var(--gold);
-    box-shadow: 0 8px 32px rgba(240,192,64,0.15);
+    transform: translateY(-3px);
+    border-color: rgba(240,192,64,0.5);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(240,192,64,0.15);
   }
 
-  .game-card img {
+  .thumb-wrap {
+    position: relative;
+    aspect-ratio: 4/3;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  .thumb-wrap img {
     width: 100%;
-    height: 75%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    background: var(--surface);
+    transition: transform 0.3s;
   }
+  .game-card:hover .thumb-wrap img { transform: scale(1.05); }
 
-  .game-card .img-placeholder {
+  .thumb-placeholder {
     width: 100%;
-    height: 75%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-  }
-
-  .game-info {
-    padding: 0.6rem 0.75rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .game-name {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0.15rem;
-  }
-
-  .game-provider {
-    font-size: 0.7rem;
-    color: var(--gold);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
   }
 
   .play-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.65);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.2s;
-    border-radius: var(--radius);
   }
-
   .game-card:hover .play-overlay { opacity: 1; }
-
-  .play-btn {
+  .play-btn-sm {
     background: var(--gold);
     color: #000;
     border: none;
     border-radius: 999px;
-    padding: 0.6rem 1.5rem;
+    padding: 0.45rem 1.2rem;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
-  /* ---- MODAL ---- */
+  .game-info {
+    padding: 0.55rem 0.7rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .game-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .game-provider {
+    font-size: 0.7rem;
+    color: var(--gold);
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* EMPTY */
+  .empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--muted);
+  }
+  .empty .emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+  /* MODAL */
   #modal-backdrop {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0,0,0,0.94);
     z-index: 200;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.75rem;
   }
   #modal-backdrop.open { display: flex; }
 
@@ -285,127 +293,91 @@
     border: 1px solid var(--border);
     border-radius: 16px;
     width: 100%;
-    max-width: 960px;
-    height: 90vh;
-    max-height: 700px;
+    max-width: 1000px;
+    height: 92vh;
+    max-height: 680px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+    box-shadow: 0 32px 80px rgba(0,0,0,0.9);
+    animation: modalIn 0.2s ease;
+  }
+  @keyframes modalIn {
+    from { transform: scale(0.96) translateY(8px); opacity: 0; }
+    to   { transform: scale(1)    translateY(0);   opacity: 1; }
   }
 
   #modal-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--border);
+    gap: 0.75rem;
     flex-shrink: 0;
   }
-
+  #modal-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--surface);
+  }
+  .modal-titles { flex: 1; min-width: 0; }
   #modal-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
     color: var(--gold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
-  #modal-subtitle {
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
+  #modal-subtitle { font-size: 0.75rem; color: var(--muted); }
 
   #modal-close {
     background: none;
     border: 1px solid var(--border);
     color: var(--muted);
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.15s;
     flex-shrink: 0;
   }
-  #modal-close:hover { border-color: var(--red); color: var(--red); }
+  #modal-close:hover { border-color: #e84040; color: #e84040; }
 
   #game-frame {
     flex: 1;
     width: 100%;
     border: none;
     display: block;
+    background: #000;
   }
 
-  /* ---- LOADING / EMPTY ---- */
-  .spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem;
-    gap: 1rem;
-    color: var(--muted);
-    flex-direction: column;
-  }
-
-  .spin {
-    width: 40px;
-    height: 40px;
-    border: 3px solid var(--border);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .empty { text-align: center; padding: 4rem; color: var(--muted); }
-
-  /* ---- PAGINATION ---- */
-  .pagination {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .page-btn {
+  /* FOOTER */
+  footer {
     background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    transition: all 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .page-btn:hover, .page-btn.active { background: var(--gold); border-color: var(--gold); color: #000; font-weight: 700; }
-  .page-btn:disabled { opacity: 0.3; cursor: default; }
-
-  /* ---- AVISO ---- */
-  .aviso {
-    background: linear-gradient(90deg, #1a1010, #1a1318);
     border-top: 1px solid var(--border);
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     color: var(--muted);
+    line-height: 1.6;
   }
-  .aviso a { color: var(--gold); }
+  footer a { color: var(--gold); text-decoration: none; }
 
-  /* ---- RESPONSIVE ---- */
-  @media (max-width: 600px) {
-    #games-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-    .header-inner { gap: 1rem; }
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    #games-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.6rem; }
+    .header-inner { gap: 0.75rem; }
     .search-wrap { max-width: none; }
+    .hero h1 { letter-spacing: 3px; }
   }
 </style>
 </head>
@@ -413,200 +385,196 @@
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="#">🎰 <span>SLOTS</span>DEMO</a>
+    <a class="logo" href="#">🎰 SLOTS<span>DEMO</span></a>
     <div class="search-wrap">
-      <span class="icon">🔍</span>
-      <input type="text" id="search-input" placeholder="Pesquisar jogo ou fornecedor...">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Pesquisar jogo...">
+    </div>
+    <div class="header-count">
+      <strong id="count-display">0</strong> jogos
     </div>
   </div>
 </header>
 
 <div class="hero">
   <h1>Jogos Demo Gratuitos</h1>
-  <p>Joga sem risco • Sem registo • Mais de 10.000 slots dos melhores fornecedores</p>
+  <p>Joga sem risco • Sem registo • Os melhores slots dos maiores fornecedores</p>
 </div>
 
-<div class="filters" id="provider-filters">
+<div class="filters-bar" id="provider-filters">
   <span class="filter-label">Fornecedor:</span>
   <button class="pill active" data-provider="">Todos</button>
   <button class="pill" data-provider="Pragmatic Play">Pragmatic Play</button>
-  <button class="pill" data-provider="Hacksaw Gaming">Hacksaw</button>
-  <button class="pill" data-provider="Amusnet">Amusnet</button>
+  <button class="pill" data-provider="Hacksaw Gaming">Hacksaw Gaming</button>
   <button class="pill" data-provider="Play'n GO">Play'n GO</button>
   <button class="pill" data-provider="NetEnt">NetEnt</button>
-  <button class="pill" data-provider="Push Gaming">Push Gaming</button>
   <button class="pill" data-provider="Nolimit City">Nolimit City</button>
+  <button class="pill" data-provider="Push Gaming">Push Gaming</button>
   <button class="pill" data-provider="ELK Studios">ELK Studios</button>
   <button class="pill" data-provider="Relax Gaming">Relax Gaming</button>
+  <button class="pill" data-provider="Spribe">Spribe</button>
+  <button class="pill" data-provider="Red Tiger">Red Tiger</button>
 </div>
 
 <div class="main">
-  <div class="section-title" id="results-label">A carregar jogos...</div>
-  <div id="games-grid">
-    <div class="spinner"><div class="spin"></div><span>A carregar jogos...</span></div>
+  <div class="section-header">
+    <span class="section-title" id="results-label">Todos os jogos</span>
+    <div class="section-line"></div>
   </div>
-  <div class="pagination" id="pagination"></div>
+  <div id="games-grid"></div>
 </div>
 
-<div class="aviso">
-  ⚠️ Estes jogos são apenas para diversão (modo demo). Não envolve dinheiro real. Jogo responsável: <a href="https://www.srij.turismodeportugal.pt" target="_blank">SRIJ</a> | +18
-</div>
+<footer>
+  ⚠️ Estes jogos são apenas para diversão (modo demo). Não envolve dinheiro real.<br>
+  Jogo responsável: <a href="https://www.srij.turismodeportugal.pt" target="_blank">SRIJ</a> | Proibido a menores de 18 anos.
+</footer>
 
 <!-- MODAL -->
 <div id="modal-backdrop">
   <div id="modal">
     <div id="modal-header">
-      <div>
+      <img id="modal-thumb" src="" alt="">
+      <div class="modal-titles">
         <div id="modal-title">A carregar...</div>
         <div id="modal-subtitle"></div>
       </div>
       <button id="modal-close" onclick="closeModal()">✕</button>
     </div>
-    <iframe id="game-frame" src="" allowfullscreen></iframe>
+    <iframe id="game-frame" src="" allowfullscreen allow="autoplay"></iframe>
   </div>
 </div>
 
 <script>
-const API_TOKEN = 'JO2N6fErhUk4UyFpZVYGuNBWLEkgORutFMsJsZbjMVldCV2r8t';
-const API_BASE  = 'https://slotslaunch.com/api';
-const ORIGIN    = 'dontasko.github.io';
-const PER_PAGE  = 48;
+const TOKEN = 'JO2N6fErhUk4UyFpZVYGuNBWLEkgORutFMsJsZbjMVldCV2r8t';
 
-let allGames    = [];
-let filtered    = [];
-let currentPage = 1;
+// IDs extraídos do SlotsLaunch (assets.slotslaunch.com/[ID]/nome.jpg)
+const GAMES = [
+  // PRAGMATIC PLAY
+  { id: 5706,  name: "Sweet Bonanza",               provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5706/sweet-bonanza.jpg" },
+  { id: 5621,  name: "Gates of Olympus",            provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5621/gates-of-olympus.jpg" },
+  { id: 18440, name: "Gates of Olympus 1000",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/18440/gates-of-olympus-1000.jpg" },
+  { id: 23735, name: "Sweet Bonanza 1000",          provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/23735/sweet-bonanza-1000.jpg" },
+  { id: 22039, name: "Sugar Rush 1000",             provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/22039/sugar-rush-1000.jpg" },
+  { id: 4656,  name: "Big Bass Splash",             provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/4656/big-bass-splash.jpg" },
+  { id: 5580,  name: "Big Bass Bonanza",            provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5580/big-bass-bonanza.jpg" },
+  { id: 32697, name: "Big Bass Bonanza 1000",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/32697/big-bass-bonanza-1000.jpg" },
+  { id: 11469, name: "Zeus vs Hades Gods of War",   provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/11469/zeus-vs-hades-gods-of-war.jpg" },
+  { id: 2731,  name: "Buffalo King Megaways",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/2731/buffal-king-megaways.jpg" },
+  { id: 37832, name: "Sweet Rush Bonanza",          provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/37832/sweet-rush-bonanza.jpg" },
+  { id: 32727, name: "Gates of Olympus Super Scatter", provider: "Pragmatic Play", thumb: "https://assets.slotslaunch.com/32727/gates-of-olympus-super-scatter.jpg" },
+  { id: 38487, name: "Starlight Princess Super Scatter", provider: "Pragmatic Play", thumb: "https://assets.slotslaunch.com/38487/starlight-princess-super-scatter.jpg" },
+  { id: 28030, name: "Vampy Party",                provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/28030/vampy-party.jpg" },
+
+  // HACKSAW GAMING
+  { id: 16132, name: "Le Bandit",                  provider: "Hacksaw Gaming",  thumb: "https://assets.slotslaunch.com/16132/le-bandit.jpg" },
+  { id: 36904, name: "Le Zeus",                    provider: "Hacksaw Gaming",  thumb: "https://assets.slotslaunch.com/36904/le-zeus.jpg" },
+
+  // PLAY'N GO
+  { id: 9091,  name: "Rich Wilde Tome of Madness", provider: "Play'n GO",       thumb: "https://assets.slotslaunch.com/9091/tome-of-madness.jpg" },
+  { id: 9332,  name: "Book of Dead",               provider: "Play'n GO",       thumb: "https://assets.slotslaunch.com/9332/book-of-dead.jpg" },
+
+  // ELK STUDIOS
+  { id: 36274, name: "Pirots 4",                   provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/36274/pirots-4.jpg" },
+  { id: 25592, name: "Pirots 3",                   provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/25592/pirots-3.jpg" },
+  { id: 105874, name: "Ice Wolf 2",                provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/105874/ice-wolf-2.jpg" },
+
+  // SPRIBE
+  { id: 15083, name: "Aviator",                    provider: "Spribe",          thumb: "https://assets.slotslaunch.com/15083/aviator.jpg" },
+
+  // GREENTUBE
+  { id: 19633, name: "Book of Ra",                 provider: "Greentube",       thumb: "https://assets.slotslaunch.com/19633/book-of-ra.jpg" },
+
+  // RED TIGER
+  { id: 7624,  name: "Midas Touch",                provider: "Red Tiger",       thumb: "https://assets.slotslaunch.com/7624/midas-touch.jpg" },
+
+  // QUICKSPIN
+  { id: 5858,  name: "Mayana",                     provider: "Quickspin",       thumb: "https://assets.slotslaunch.com/5858/mayana.jpg" },
+
+  // AVATARUX
+  { id: 34219, name: "Electro Cubes",              provider: "AvatarUX",        thumb: "https://assets.slotslaunch.com/34219/electro-cubes.jpg" },
+
+  // ISOFTBET
+  { id: 27315, name: "Gates of Glory",             provider: "iSoftBet",        thumb: "https://assets.slotslaunch.com/27315/gates-of-glory.jpg" },
+
+  // STAKELOGIC
+  { id: 27579, name: "Snowflake Sorcery",          provider: "Stakelogic",      thumb: "https://assets.slotslaunch.com/27579/snowflake-sorcery.jpg" },
+
+  // 4THEPLAYER
+  { id: 29946, name: "10000 BC DoubleMax 2",       provider: "4ThePlayer",      thumb: "https://assets.slotslaunch.com/29946/10000-bc-doublemax-2.jpg" },
+
+  // WAZDAN
+  { id: 29943, name: "12 Coins Grand Diamond",     provider: "Wazdan",          thumb: "https://assets.slotslaunch.com/29943/12-coins-grand-diamond-edition.jpg" },
+
+  // ENDORPHINA
+  { id: 89418, name: "3 Witch Pots",               provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/89418/3-witch-pots.jpg" },
+  { id: 106438, name: "3 Coin Towers",             provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/106438/3-coin-towers.jpg" },
+  { id: 105181, name: "Book of Ganesha",           provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/105181/book-of-ganesha.jpg" },
+
+  // PEARFICTION
+  { id: 27338, name: "Alpha Gods Zeus",            provider: "PearFiction",     thumb: "https://assets.slotslaunch.com/27338/alpha-gods-zeus.jpg" },
+
+  // NAILED IT GAMES
+  { id: 22672, name: "Riptide Pirates",            provider: "Nailed It Games", thumb: "https://assets.slotslaunch.com/22672/riptide-pirates.jpg" },
+
+  // BULLSHARK
+  { id: 25005, name: "Jawsome Pirates",            provider: "Bullshark Games", thumb: "https://assets.slotslaunch.com/25005/jawsome-pirates.jpg" },
+
+  // GOLD COIN STUDIOS
+  { id: 22531, name: "Hades Lost Treasures",       provider: "Gold Coin Studios", thumb: "https://assets.slotslaunch.com/22531/hades-lost-treasures.jpg" },
+
+  // TADA GAMING
+  { id: 11356, name: "Super Ace",                  provider: "TaDa Gaming",     thumb: "https://assets.slotslaunch.com/11356/552x380_EN_GAMEID_49.png" },
+  { id: 16326, name: "Fortune Gems 2",             provider: "TaDa Gaming",     thumb: "https://assets.slotslaunch.com/16326/fortune-gems-2.jpg" },
+];
+
+let filtered = [...GAMES];
 let activeProvider = '';
-let searchTerm  = '';
+let searchTerm = '';
 
-// ---- FETCH GAMES ----
-async function fetchGames() {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Origin': ORIGIN
-  };
-
-  let page = 1;
-  let games = [];
-
-  // Fetch first page to know total
-  const url = `${API_BASE}/games?token=${API_TOKEN}&per_page=100&order_by=name&order=asc&page=1`;
-  try {
-    const res = await fetch(url, { headers });
-    const data = await res.json();
-    games = data.data || [];
-    const lastPage = data.meta?.last_page || 1;
-
-    // Fetch remaining pages (max 5 pages = 500 games to keep it fast)
-    const maxPages = Math.min(lastPage, 5);
-    const promises = [];
-    for (let p = 2; p <= maxPages; p++) {
-      promises.push(
-        fetch(`${API_BASE}/games?token=${API_TOKEN}&per_page=100&order_by=name&order=asc&page=${p}`, { headers })
-          .then(r => r.json())
-          .then(d => d.data || [])
-      );
-    }
-    const extraPages = await Promise.all(promises);
-    extraPages.forEach(g => games = games.concat(g));
-  } catch (err) {
-    console.error('Erro ao carregar jogos:', err);
-    document.getElementById('games-grid').innerHTML = `
-      <div class="empty">
-        <p style="font-size:2rem; margin-bottom:0.5rem">⚠️</p>
-        <p>Erro ao carregar jogos. Verifica a consola.</p>
-        <p style="font-size:0.75rem; margin-top:0.5rem; color:#555">${err.message}</p>
-      </div>`;
-    return;
-  }
-
-  allGames = games;
-  applyFilters();
-}
-
-// ---- FILTERS ----
 function applyFilters() {
-  filtered = allGames.filter(g => {
-    const matchProvider = !activeProvider || (g.provider || '').toLowerCase().includes(activeProvider.toLowerCase());
-    const matchSearch   = !searchTerm || g.name.toLowerCase().includes(searchTerm) || (g.provider || '').toLowerCase().includes(searchTerm);
-    return matchProvider && matchSearch;
+  filtered = GAMES.filter(g => {
+    const mp = !activeProvider || g.provider === activeProvider;
+    const ms = !searchTerm || g.name.toLowerCase().includes(searchTerm) || g.provider.toLowerCase().includes(searchTerm);
+    return mp && ms;
   });
-  currentPage = 1;
   renderGrid();
 }
 
-// ---- RENDER GRID ----
 function renderGrid() {
-  const grid  = document.getElementById('games-grid');
+  const grid = document.getElementById('games-grid');
   const label = document.getElementById('results-label');
-  const start = (currentPage - 1) * PER_PAGE;
-  const slice = filtered.slice(start, start + PER_PAGE);
+  const counter = document.getElementById('count-display');
 
-  label.textContent = `${filtered.length} jogos encontrados`;
+  counter.textContent = filtered.length;
+  label.textContent = activeProvider
+    ? `${activeProvider} — ${filtered.length} jogos`
+    : `Todos os fornecedores — ${filtered.length} jogos`;
 
   if (filtered.length === 0) {
-    grid.innerHTML = '<div class="empty">Nenhum jogo encontrado. Tenta outro filtro.</div>';
-    document.getElementById('pagination').innerHTML = '';
+    grid.innerHTML = `<div class="empty"><div class="emoji">🔍</div><p>Nenhum jogo encontrado.<br>Tenta outro filtro ou pesquisa.</p></div>`;
     return;
   }
 
-  grid.innerHTML = slice.map(g => {
-    const thumb = g.thumb || '';
-    const name  = escHtml(g.name || 'Sem nome');
-    const prov  = escHtml(g.provider || '');
-    const imgTag = thumb
-      ? `<img src="${escHtml(thumb)}" alt="${name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
-      : '';
-    const placeholder = `<div class="img-placeholder" ${thumb ? 'style="display:none"' : ''}>🎰</div>`;
-    return `
-      <div class="game-card" onclick="openGame(${g.id}, '${name.replace(/'/g,"\\'")}', '${prov.replace(/'/g,"\\'")}')">
-        ${imgTag}${placeholder}
-        <div class="game-info">
-          <div class="game-name">${name}</div>
-          <div class="game-provider">${prov}</div>
-        </div>
-        <div class="play-overlay"><button class="play-btn">▶ Jogar</button></div>
-      </div>`;
-  }).join('');
-
-  renderPagination();
+  grid.innerHTML = filtered.map(g => `
+    <div class="game-card" onclick="openGame(${g.id},'${esc(g.name)}','${esc(g.provider)}','${esc(g.thumb)}')">
+      <div class="thumb-wrap">
+        <img src="${esc(g.thumb)}" alt="${esc(g.name)}" loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="thumb-placeholder" style="display:none">🎰</div>
+        <div class="play-overlay"><button class="play-btn-sm">▶ Jogar</button></div>
+      </div>
+      <div class="game-info">
+        <div class="game-name">${esc(g.name)}</div>
+        <div class="game-provider">${esc(g.provider)}</div>
+      </div>
+    </div>`).join('');
 }
 
-// ---- PAGINATION ----
-function renderPagination() {
-  const total = Math.ceil(filtered.length / PER_PAGE);
-  const pg    = document.getElementById('pagination');
-  if (total <= 1) { pg.innerHTML = ''; return; }
-
-  let html = '';
-  html += `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
-
-  for (let i = 1; i <= total; i++) {
-    if (i === 1 || i === total || Math.abs(i - currentPage) <= 2) {
-      html += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
-    } else if (Math.abs(i - currentPage) === 3) {
-      html += `<span style="color:var(--muted);padding:0 4px">…</span>`;
-    }
-  }
-
-  html += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===total?'disabled':''}>›</button>`;
-  pg.innerHTML = html;
-}
-
-function goPage(p) {
-  const total = Math.ceil(filtered.length / PER_PAGE);
-  if (p < 1 || p > total) return;
-  currentPage = p;
-  renderGrid();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ---- OPEN GAME ----
-function openGame(id, name, provider) {
-  const frameUrl = `https://slotslaunch.com/iframe/${id}?token=${API_TOKEN}`;
+function openGame(id, name, provider, thumb) {
   document.getElementById('modal-title').textContent = name;
   document.getElementById('modal-subtitle').textContent = provider;
-  document.getElementById('game-frame').src = frameUrl;
+  document.getElementById('modal-thumb').src = thumb;
+  document.getElementById('game-frame').src = `https://slotslaunch.com/iframe/${id}?token=${TOKEN}`;
   document.getElementById('modal-backdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -617,13 +585,11 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-document.getElementById('modal-backdrop').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
+document.getElementById('modal-backdrop').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal-backdrop')) closeModal();
 });
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-// ---- EVENTS ----
 document.querySelectorAll('.pill').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
@@ -638,13 +604,12 @@ document.getElementById('search-input').addEventListener('input', function() {
   applyFilters();
 });
 
-// ---- UTILS ----
-function escHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
-// ---- INIT ----
-fetchGames();
+// Init
+renderGrid();
 </script>
 </body>
 </html>
