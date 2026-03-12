@@ -5,379 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Slots Demo Grátis — Jogos Demo dos Melhores Fornecedores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #09090e;
-    --surface: #111118;
-    --card: #14141c;
-    --border: #252535;
-    --gold: #f0c040;
-    --gold2: #e8a820;
-    --accent: #ff6b35;
-    --text: #e8e8f0;
-    --muted: #5a5a78;
-    --radius: 12px;
+    --bg: #09090e; --surface: #111118; --card: #14141c; --border: #252535;
+    --gold: #f0c040; --text: #e8e8f0; --muted: #5a5a78; --radius: 12px;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* HEADER */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(9,9,14,0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .header-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    height: 60px;
-  }
-
-  .logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-decoration: none;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .logo span { color: var(--text); opacity: 0.7; }
-
-  .search-wrap {
-    flex: 1;
-    max-width: 380px;
-    position: relative;
-  }
-  .search-wrap input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.45rem 1rem 0.45rem 2.4rem;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    outline: none;
-    transition: border-color 0.2s;
-  }
+  header { position: sticky; top: 0; z-index: 100; background: rgba(9,9,14,0.94); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+  .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; gap: 1.25rem; height: 60px; }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--gold); text-decoration: none; flex-shrink: 0; }
+  .logo span { color: var(--text); opacity: 0.6; }
+  .search-wrap { flex: 1; max-width: 380px; position: relative; }
+  .search-wrap input { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.45rem 1rem 0.45rem 2.2rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.875rem; outline: none; transition: border-color 0.2s; }
   .search-wrap input::placeholder { color: var(--muted); }
   .search-wrap input:focus { border-color: var(--gold); }
-  .search-wrap svg {
-    position: absolute;
-    left: 0.7rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    pointer-events: none;
-  }
-
-  .header-count {
-    margin-left: auto;
-    font-size: 0.78rem;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
+  .si { position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 0.85rem; }
+  .header-count { margin-left: auto; font-size: 0.78rem; color: var(--muted); flex-shrink: 0; }
   .header-count strong { color: var(--gold); }
 
-  /* HERO */
-  .hero {
-    text-align: center;
-    padding: 2.5rem 1.5rem 1rem;
-    background: radial-gradient(ellipse 100% 80% at 50% -10%, rgba(240,192,64,0.06) 0%, transparent 60%);
-  }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 4rem);
-    letter-spacing: 5px;
-    color: var(--gold);
-    text-shadow: 0 0 60px rgba(240,192,64,0.2);
-    margin-bottom: 0.4rem;
-  }
+  .hero { text-align: center; padding: 2.5rem 1.5rem 1rem; background: radial-gradient(ellipse 100% 80% at 50% -10%, rgba(240,192,64,0.07) 0%, transparent 60%); }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: 5px; color: var(--gold); text-shadow: 0 0 60px rgba(240,192,64,0.2); margin-bottom: 0.4rem; }
   .hero p { color: var(--muted); font-size: 0.9rem; }
 
-  /* FILTERS */
-  .filters-bar {
-    max-width: 1400px;
-    margin: 1.25rem auto 0;
-    padding: 0 1.5rem 1.25rem;
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .filter-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--muted);
-    margin-right: 0.25rem;
-    flex-shrink: 0;
-  }
-  .pill {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 0.3rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: 'DM Sans', sans-serif;
-    white-space: nowrap;
-  }
+  .notice { max-width: 1400px; margin: 1rem auto 0; padding: 0 1.5rem; }
+  .notice-inner { background: rgba(240,192,64,0.07); border: 1px solid rgba(240,192,64,0.2); border-radius: 8px; padding: 0.6rem 1rem; font-size: 0.82rem; color: rgba(240,192,64,0.85); }
+
+  .filters-bar { max-width: 1400px; margin: 1rem auto 0; padding: 0 1.5rem 1.25rem; display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+  .filter-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-right: 0.25rem; flex-shrink: 0; }
+  .pill { background: var(--surface); border: 1px solid var(--border); color: var(--muted); padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.82rem; cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
   .pill:hover { border-color: var(--gold); color: var(--text); }
   .pill.active { background: var(--gold); border-color: var(--gold); color: #000; font-weight: 600; }
 
-  /* MAIN */
-  .main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem 4rem;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: var(--muted);
-  }
+  .main { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+  .section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 2px; color: var(--muted); }
   .section-line { flex: 1; height: 1px; background: var(--border); }
 
-  /* GRID */
-  #games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 0.9rem;
-  }
+  #games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.9rem; }
 
-  .game-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .game-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(240,192,64,0.5);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 0 1px rgba(240,192,64,0.15);
-  }
+  .game-card { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; cursor: pointer; text-decoration: none; color: inherit; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+  .game-card:hover { transform: translateY(-3px); border-color: rgba(240,192,64,0.5); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
 
-  .thumb-wrap {
-    position: relative;
-    aspect-ratio: 4/3;
-    background: var(--surface);
-    overflow: hidden;
-  }
-  .thumb-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s;
-  }
+  .thumb-wrap { position: relative; aspect-ratio: 4/3; background: var(--surface); overflow: hidden; }
+  .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
   .game-card:hover .thumb-wrap img { transform: scale(1.05); }
+  .thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2rem; background: linear-gradient(135deg, #1a1a2e, #16213e); }
 
-  .thumb-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-  }
-
-  .play-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
+  .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; }
   .game-card:hover .play-overlay { opacity: 1; }
-  .play-btn-sm {
-    background: var(--gold);
-    color: #000;
-    border: none;
-    border-radius: 999px;
-    padding: 0.45rem 1.2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .play-btn-sm { background: var(--gold); color: #000; border: none; border-radius: 999px; padding: 0.45rem 1.2rem; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
 
-  .game-info {
-    padding: 0.55rem 0.7rem 0.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-  .game-name {
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .game-provider {
-    font-size: 0.7rem;
-    color: var(--gold);
-    opacity: 0.8;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  .game-info { padding: 0.55rem 0.7rem 0.6rem; display: flex; flex-direction: column; gap: 0.1rem; }
+  .game-name { font-size: 0.78rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .game-provider { font-size: 0.7rem; color: var(--gold); opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-  /* EMPTY */
-  .empty {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 4rem 1rem;
-    color: var(--muted);
-  }
-  .empty .emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .empty { grid-column: 1/-1; text-align: center; padding: 4rem 1rem; color: var(--muted); }
 
-  /* MODAL */
-  #modal-backdrop {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.94);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem;
-  }
-  #modal-backdrop.open { display: flex; }
-
-  #modal {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 1000px;
-    height: 92vh;
-    max-height: 680px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.9);
-    animation: modalIn 0.2s ease;
-  }
-  @keyframes modalIn {
-    from { transform: scale(0.96) translateY(8px); opacity: 0; }
-    to   { transform: scale(1)    translateY(0);   opacity: 1; }
-  }
-
-  #modal-header {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border);
-    gap: 0.75rem;
-    flex-shrink: 0;
-  }
-  #modal-thumb {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: var(--surface);
-  }
-  .modal-titles { flex: 1; min-width: 0; }
-  #modal-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  #modal-subtitle { font-size: 0.75rem; color: var(--muted); }
-
-  #modal-close {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-    flex-shrink: 0;
-  }
-  #modal-close:hover { border-color: #e84040; color: #e84040; }
-
-  #game-frame {
-    flex: 1;
-    width: 100%;
-    border: none;
-    display: block;
-    background: #000;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 1rem 1.5rem;
-    text-align: center;
-    font-size: 0.74rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1rem 1.5rem; text-align: center; font-size: 0.74rem; color: var(--muted); line-height: 1.6; }
   footer a { color: var(--gold); text-decoration: none; }
 
-  /* RESPONSIVE */
   @media (max-width: 640px) {
     #games-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.6rem; }
-    .header-inner { gap: 0.75rem; }
     .search-wrap { max-width: none; }
-    .hero h1 { letter-spacing: 3px; }
   }
 </style>
 </head>
@@ -387,12 +79,10 @@
   <div class="header-inner">
     <a class="logo" href="#">🎰 SLOTS<span>DEMO</span></a>
     <div class="search-wrap">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <span class="si">🔍</span>
       <input type="text" id="search-input" placeholder="Pesquisar jogo...">
     </div>
-    <div class="header-count">
-      <strong id="count-display">0</strong> jogos
-    </div>
+    <div class="header-count"><strong id="count-display">0</strong> jogos</div>
   </div>
 </header>
 
@@ -401,19 +91,23 @@
   <p>Joga sem risco • Sem registo • Os melhores slots dos maiores fornecedores</p>
 </div>
 
-<div class="filters-bar" id="provider-filters">
+<div class="notice">
+  <div class="notice-inner">
+    ℹ️ Ao clicar num jogo abre numa nova tab no SlotsLaunch.com — 100% grátis, sem registo necessário.
+  </div>
+</div>
+
+<div class="filters-bar">
   <span class="filter-label">Fornecedor:</span>
   <button class="pill active" data-provider="">Todos</button>
   <button class="pill" data-provider="Pragmatic Play">Pragmatic Play</button>
   <button class="pill" data-provider="Hacksaw Gaming">Hacksaw Gaming</button>
   <button class="pill" data-provider="Play'n GO">Play'n GO</button>
-  <button class="pill" data-provider="NetEnt">NetEnt</button>
-  <button class="pill" data-provider="Nolimit City">Nolimit City</button>
-  <button class="pill" data-provider="Push Gaming">Push Gaming</button>
   <button class="pill" data-provider="ELK Studios">ELK Studios</button>
-  <button class="pill" data-provider="Relax Gaming">Relax Gaming</button>
   <button class="pill" data-provider="Spribe">Spribe</button>
+  <button class="pill" data-provider="Endorphina">Endorphina</button>
   <button class="pill" data-provider="Red Tiger">Red Tiger</button>
+  <button class="pill" data-provider="Greentube">Greentube</button>
 </div>
 
 <div class="main">
@@ -429,186 +123,100 @@
   Jogo responsável: <a href="https://www.srij.turismodeportugal.pt" target="_blank">SRIJ</a> | Proibido a menores de 18 anos.
 </footer>
 
-<!-- MODAL -->
-<div id="modal-backdrop">
-  <div id="modal">
-    <div id="modal-header">
-      <img id="modal-thumb" src="" alt="">
-      <div class="modal-titles">
-        <div id="modal-title">A carregar...</div>
-        <div id="modal-subtitle"></div>
-      </div>
-      <button id="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <iframe id="game-frame" src="" allowfullscreen allow="autoplay"></iframe>
-  </div>
-</div>
-
 <script>
-const TOKEN = 'JO2N6fErhUk4UyFpZVYGuNBWLEkgORutFMsJsZbjMVldCV2r8t';
-
-// IDs extraídos do SlotsLaunch (assets.slotslaunch.com/[ID]/nome.jpg)
 const GAMES = [
-  // PRAGMATIC PLAY
-  { id: 5706,  name: "Sweet Bonanza",               provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5706/sweet-bonanza.jpg" },
-  { id: 5621,  name: "Gates of Olympus",            provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5621/gates-of-olympus.jpg" },
-  { id: 18440, name: "Gates of Olympus 1000",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/18440/gates-of-olympus-1000.jpg" },
-  { id: 23735, name: "Sweet Bonanza 1000",          provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/23735/sweet-bonanza-1000.jpg" },
-  { id: 22039, name: "Sugar Rush 1000",             provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/22039/sugar-rush-1000.jpg" },
-  { id: 4656,  name: "Big Bass Splash",             provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/4656/big-bass-splash.jpg" },
-  { id: 5580,  name: "Big Bass Bonanza",            provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/5580/big-bass-bonanza.jpg" },
-  { id: 32697, name: "Big Bass Bonanza 1000",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/32697/big-bass-bonanza-1000.jpg" },
-  { id: 11469, name: "Zeus vs Hades Gods of War",   provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/11469/zeus-vs-hades-gods-of-war.jpg" },
-  { id: 2731,  name: "Buffalo King Megaways",       provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/2731/buffal-king-megaways.jpg" },
-  { id: 37832, name: "Sweet Rush Bonanza",          provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/37832/sweet-rush-bonanza.jpg" },
-  { id: 32727, name: "Gates of Olympus Super Scatter", provider: "Pragmatic Play", thumb: "https://assets.slotslaunch.com/32727/gates-of-olympus-super-scatter.jpg" },
-  { id: 38487, name: "Starlight Princess Super Scatter", provider: "Pragmatic Play", thumb: "https://assets.slotslaunch.com/38487/starlight-princess-super-scatter.jpg" },
-  { id: 28030, name: "Vampy Party",                provider: "Pragmatic Play",  thumb: "https://assets.slotslaunch.com/28030/vampy-party.jpg" },
-
+  { name:"Sweet Bonanza", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/5706/sweet-bonanza.jpg", url:"https://slotslaunch.com/pragmatic-play/sweet-bonanza" },
+  { name:"Gates of Olympus", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/5621/gates-of-olympus.jpg", url:"https://slotslaunch.com/pragmatic-play/gates-of-olympus" },
+  { name:"Gates of Olympus 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/18440/gates-of-olympus-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/gates-of-olympus-1000" },
+  { name:"Sweet Bonanza 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/23735/sweet-bonanza-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/sweet-bonanza-1000" },
+  { name:"Sugar Rush 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/22039/sugar-rush-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/sugar-rush-1000" },
+  { name:"Big Bass Splash", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/4656/big-bass-splash.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-splash" },
+  { name:"Big Bass Bonanza", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/5580/big-bass-bonanza.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-bonanza" },
+  { name:"Big Bass Bonanza 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/32697/big-bass-bonanza-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-bonanza-1000" },
+  { name:"Big Bass Splash 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/89329/big-bass-splash-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-splash-1000" },
+  { name:"Big Bass Rock and Roll", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/35351/big-bass-rock-and-roll.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-rock-and-roll" },
+  { name:"Zeus vs Hades Gods of War", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/11469/zeus-vs-hades-gods-of-war.jpg", url:"https://slotslaunch.com/pragmatic-play/zeus-vs-hades-gods-of-war" },
+  { name:"Zeus vs Hades 250", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/105975/zeus-vs-hades-gods-of-war-250.jpg", url:"https://slotslaunch.com/pragmatic-play/zeus-vs-hades-gods-of-war-250" },
+  { name:"Buffalo King Megaways", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/2731/buffal-king-megaways.jpg", url:"https://slotslaunch.com/pragmatic-play/buffalo-king-megaways" },
+  { name:"Gates of Olympus Super Scatter", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/32727/gates-of-olympus-super-scatter.jpg", url:"https://slotslaunch.com/pragmatic-play/gates-of-olympus-super-scatter" },
+  { name:"Sweet Bonanza Super Scatter", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/35897/sweet-bonanza-super-scatter.jpg", url:"https://slotslaunch.com/pragmatic-play/sweet-bonanza-super-scatter" },
+  { name:"Sugar Rush Super Scatter", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/106071/sugar-rush-super-scatter.jpg", url:"https://slotslaunch.com/pragmatic-play/sugar-rush-super-scatter" },
+  { name:"Starlight Princess Super Scatter", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/38487/starlight-princess-super-scatter.jpg", url:"https://slotslaunch.com/pragmatic-play/starlight-princess-super-scatter" },
+  { name:"Vampy Party", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/28030/vampy-party.jpg", url:"https://slotslaunch.com/pragmatic-play/vampy-party" },
+  { name:"Gates of Hades", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/34583/gates-of-hades.jpg", url:"https://slotslaunch.com/pragmatic-play/gates-of-hades" },
+  { name:"Gates of Pyroth", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/105711/gates-of-pyroth.jpg", url:"https://slotslaunch.com/pragmatic-play/gates-of-pyroth" },
+  { name:"Hades Inferno 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/33513/hades-inferno-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/hades-inferno-1000" },
+  { name:"Plinko+", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/36670/plinko-plus.jpg", url:"https://slotslaunch.com/pragmatic-play/plinko" },
+  { name:"Hammerstorm", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/105205/hammerstorm.jpg", url:"https://slotslaunch.com/pragmatic-play/hammerstorm" },
+  { name:"Fortune of Olympus", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/99410/fortune-of-olympus.jpg", url:"https://slotslaunch.com/pragmatic-play/fortune-of-olympus" },
+  { name:"Release the Kraken Megaways", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/27958/release-the-kraken-megaways.jpg", url:"https://slotslaunch.com/pragmatic-play/release-the-kraken-megaways" },
+  { name:"Captain Kraken Megaways", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/36822/captain-kraken-megaways.jpg", url:"https://slotslaunch.com/pragmatic-play/captain-kraken-megaways" },
+  { name:"Wild West Gold Blazing Bounty", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/34781/wild-west-gold-blazing-bounty.jpg", url:"https://slotslaunch.com/pragmatic-play/wild-west-gold-blazing-bounty" },
+  { name:"Mahjong Wins Super Scatter", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/34572/mahjong-wins-super-scatter.jpg", url:"https://slotslaunch.com/pragmatic-play/mahjong-wins-super-scatter" },
+  { name:"5 Lions Reborn", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/32071/5-lions-reborn.jpg", url:"https://slotslaunch.com/pragmatic-play/5-lions-reborn" },
+  { name:"Book of Monsters", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/31737/book-of-monsters.jpg", url:"https://slotslaunch.com/pragmatic-play/book-of-monsters" },
+  { name:"Lucky Tiger 1000", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/33695/lucky-tiger-1000.jpg", url:"https://slotslaunch.com/pragmatic-play/lucky-tiger-1000" },
+  { name:"Lucky Tiger Gold", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/106250/lucky-tiger-gold.jpg", url:"https://slotslaunch.com/pragmatic-play/lucky-tiger-gold" },
+  { name:"Sweet Rush Bonanza", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/37832/sweet-rush-bonanza.jpg", url:"https://slotslaunch.com/pragmatic-play/sweet-rush-bonanza" },
+  { name:"Big Bass Boxing Bonus Round", provider:"Pragmatic Play", thumb:"https://assets.slotslaunch.com/34299/big-bass-boxing-bonus-round.jpg", url:"https://slotslaunch.com/pragmatic-play/big-bass-boxing-bonus-round" },
   // HACKSAW GAMING
-  { id: 16132, name: "Le Bandit",                  provider: "Hacksaw Gaming",  thumb: "https://assets.slotslaunch.com/16132/le-bandit.jpg" },
-  { id: 36904, name: "Le Zeus",                    provider: "Hacksaw Gaming",  thumb: "https://assets.slotslaunch.com/36904/le-zeus.jpg" },
-
+  { name:"Le Bandit", provider:"Hacksaw Gaming", thumb:"https://assets.slotslaunch.com/16132/le-bandit.jpg", url:"https://slotslaunch.com/hacksaw-gaming/le-bandit" },
+  { name:"Le Zeus", provider:"Hacksaw Gaming", thumb:"https://assets.slotslaunch.com/36904/le-zeus.jpg", url:"https://slotslaunch.com/hacksaw-gaming/le-zeus" },
   // PLAY'N GO
-  { id: 9091,  name: "Rich Wilde Tome of Madness", provider: "Play'n GO",       thumb: "https://assets.slotslaunch.com/9091/tome-of-madness.jpg" },
-  { id: 9332,  name: "Book of Dead",               provider: "Play'n GO",       thumb: "https://assets.slotslaunch.com/9332/book-of-dead.jpg" },
-
+  { name:"Book of Dead", provider:"Play'n GO", thumb:"https://assets.slotslaunch.com/9332/book-of-dead.jpg", url:"https://slotslaunch.com/play-n-go/book-of-dead" },
+  { name:"Rich Wilde Tome of Madness", provider:"Play'n GO", thumb:"https://assets.slotslaunch.com/9091/tome-of-madness.jpg", url:"https://slotslaunch.com/play-n-go/rich-wilde-and-the-tome-of-madness" },
   // ELK STUDIOS
-  { id: 36274, name: "Pirots 4",                   provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/36274/pirots-4.jpg" },
-  { id: 25592, name: "Pirots 3",                   provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/25592/pirots-3.jpg" },
-  { id: 105874, name: "Ice Wolf 2",                provider: "ELK Studios",     thumb: "https://assets.slotslaunch.com/105874/ice-wolf-2.jpg" },
-
+  { name:"Pirots 4", provider:"ELK Studios", thumb:"https://assets.slotslaunch.com/36274/pirots-4.jpg", url:"https://slotslaunch.com/elk-studios/pirots-4" },
+  { name:"Pirots 3", provider:"ELK Studios", thumb:"https://assets.slotslaunch.com/25592/pirots-3.jpg", url:"https://slotslaunch.com/elk-studios/pirots-3" },
+  { name:"Ice Wolf 2", provider:"ELK Studios", thumb:"https://assets.slotslaunch.com/105874/ice-wolf-2.jpg", url:"https://slotslaunch.com/elk-studios/ice-wolf-2" },
   // SPRIBE
-  { id: 15083, name: "Aviator",                    provider: "Spribe",          thumb: "https://assets.slotslaunch.com/15083/aviator.jpg" },
-
+  { name:"Aviator", provider:"Spribe", thumb:"https://assets.slotslaunch.com/15083/aviator.jpg", url:"https://slotslaunch.com/spribe/aviator" },
   // GREENTUBE
-  { id: 19633, name: "Book of Ra",                 provider: "Greentube",       thumb: "https://assets.slotslaunch.com/19633/book-of-ra.jpg" },
-
+  { name:"Book of Ra", provider:"Greentube", thumb:"https://assets.slotslaunch.com/19633/book-of-ra.jpg", url:"https://slotslaunch.com/greentube/book-of-ra" },
   // RED TIGER
-  { id: 7624,  name: "Midas Touch",                provider: "Red Tiger",       thumb: "https://assets.slotslaunch.com/7624/midas-touch.jpg" },
-
-  // QUICKSPIN
-  { id: 5858,  name: "Mayana",                     provider: "Quickspin",       thumb: "https://assets.slotslaunch.com/5858/mayana.jpg" },
-
-  // AVATARUX
-  { id: 34219, name: "Electro Cubes",              provider: "AvatarUX",        thumb: "https://assets.slotslaunch.com/34219/electro-cubes.jpg" },
-
-  // ISOFTBET
-  { id: 27315, name: "Gates of Glory",             provider: "iSoftBet",        thumb: "https://assets.slotslaunch.com/27315/gates-of-glory.jpg" },
-
-  // STAKELOGIC
-  { id: 27579, name: "Snowflake Sorcery",          provider: "Stakelogic",      thumb: "https://assets.slotslaunch.com/27579/snowflake-sorcery.jpg" },
-
-  // 4THEPLAYER
-  { id: 29946, name: "10000 BC DoubleMax 2",       provider: "4ThePlayer",      thumb: "https://assets.slotslaunch.com/29946/10000-bc-doublemax-2.jpg" },
-
-  // WAZDAN
-  { id: 29943, name: "12 Coins Grand Diamond",     provider: "Wazdan",          thumb: "https://assets.slotslaunch.com/29943/12-coins-grand-diamond-edition.jpg" },
-
+  { name:"Midas Touch", provider:"Red Tiger", thumb:"https://assets.slotslaunch.com/7624/midas-touch.jpg", url:"https://slotslaunch.com/red-tiger/midas-touch" },
   // ENDORPHINA
-  { id: 89418, name: "3 Witch Pots",               provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/89418/3-witch-pots.jpg" },
-  { id: 106438, name: "3 Coin Towers",             provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/106438/3-coin-towers.jpg" },
-  { id: 105181, name: "Book of Ganesha",           provider: "Endorphina",      thumb: "https://assets.slotslaunch.com/105181/book-of-ganesha.jpg" },
-
-  // PEARFICTION
-  { id: 27338, name: "Alpha Gods Zeus",            provider: "PearFiction",     thumb: "https://assets.slotslaunch.com/27338/alpha-gods-zeus.jpg" },
-
-  // NAILED IT GAMES
-  { id: 22672, name: "Riptide Pirates",            provider: "Nailed It Games", thumb: "https://assets.slotslaunch.com/22672/riptide-pirates.jpg" },
-
-  // BULLSHARK
-  { id: 25005, name: "Jawsome Pirates",            provider: "Bullshark Games", thumb: "https://assets.slotslaunch.com/25005/jawsome-pirates.jpg" },
-
-  // GOLD COIN STUDIOS
-  { id: 22531, name: "Hades Lost Treasures",       provider: "Gold Coin Studios", thumb: "https://assets.slotslaunch.com/22531/hades-lost-treasures.jpg" },
-
-  // TADA GAMING
-  { id: 11356, name: "Super Ace",                  provider: "TaDa Gaming",     thumb: "https://assets.slotslaunch.com/11356/552x380_EN_GAMEID_49.png" },
-  { id: 16326, name: "Fortune Gems 2",             provider: "TaDa Gaming",     thumb: "https://assets.slotslaunch.com/16326/fortune-gems-2.jpg" },
+  { name:"3 Witch Pots", provider:"Endorphina", thumb:"https://assets.slotslaunch.com/89418/3-witch-pots.jpg", url:"https://slotslaunch.com/endorphina/3-witch-pots" },
+  { name:"3 Coin Towers", provider:"Endorphina", thumb:"https://assets.slotslaunch.com/106438/3-coin-towers.jpg", url:"https://slotslaunch.com/endorphina/3-coin-towers" },
+  { name:"Book of Ganesha", provider:"Endorphina", thumb:"https://assets.slotslaunch.com/105181/book-of-ganesha.jpg", url:"https://slotslaunch.com/endorphina/book-of-ganesha" },
 ];
 
-let filtered = [...GAMES];
-let activeProvider = '';
-let searchTerm = '';
+let filtered=[...GAMES], activeProvider='', searchTerm='';
 
-function applyFilters() {
-  filtered = GAMES.filter(g => {
-    const mp = !activeProvider || g.provider === activeProvider;
-    const ms = !searchTerm || g.name.toLowerCase().includes(searchTerm) || g.provider.toLowerCase().includes(searchTerm);
-    return mp && ms;
+function applyFilters(){
+  filtered=GAMES.filter(g=>{
+    const mp=!activeProvider||g.provider===activeProvider;
+    const ms=!searchTerm||g.name.toLowerCase().includes(searchTerm)||g.provider.toLowerCase().includes(searchTerm);
+    return mp&&ms;
   });
   renderGrid();
 }
 
-function renderGrid() {
-  const grid = document.getElementById('games-grid');
-  const label = document.getElementById('results-label');
-  const counter = document.getElementById('count-display');
-
-  counter.textContent = filtered.length;
-  label.textContent = activeProvider
-    ? `${activeProvider} — ${filtered.length} jogos`
-    : `Todos os fornecedores — ${filtered.length} jogos`;
-
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div class="empty"><div class="emoji">🔍</div><p>Nenhum jogo encontrado.<br>Tenta outro filtro ou pesquisa.</p></div>`;
-    return;
-  }
-
-  grid.innerHTML = filtered.map(g => `
-    <div class="game-card" onclick="openGame(${g.id},'${esc(g.name)}','${esc(g.provider)}','${esc(g.thumb)}')">
+function renderGrid(){
+  const grid=document.getElementById('games-grid');
+  document.getElementById('count-display').textContent=filtered.length;
+  document.getElementById('results-label').textContent=activeProvider?`${activeProvider} — ${filtered.length} jogos`:`Todos os fornecedores — ${filtered.length} jogos`;
+  if(!filtered.length){grid.innerHTML='<div class="empty">🔍<br>Nenhum jogo encontrado.</div>';return;}
+  grid.innerHTML=filtered.map(g=>`
+    <a class="game-card" href="${g.url}" target="_blank" rel="noopener">
       <div class="thumb-wrap">
-        <img src="${esc(g.thumb)}" alt="${esc(g.name)}" loading="lazy"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="${e(g.thumb)}" alt="${e(g.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="thumb-placeholder" style="display:none">🎰</div>
-        <div class="play-overlay"><button class="play-btn-sm">▶ Jogar</button></div>
+        <div class="play-overlay"><button class="play-btn-sm">▶ Jogar Demo</button></div>
       </div>
       <div class="game-info">
-        <div class="game-name">${esc(g.name)}</div>
-        <div class="game-provider">${esc(g.provider)}</div>
+        <div class="game-name">${e(g.name)}</div>
+        <div class="game-provider">${e(g.provider)}</div>
       </div>
-    </div>`).join('');
+    </a>`).join('');
 }
 
-function openGame(id, name, provider, thumb) {
-  document.getElementById('modal-title').textContent = name;
-  document.getElementById('modal-subtitle').textContent = provider;
-  document.getElementById('modal-thumb').src = thumb;
-  document.getElementById('game-frame').src = `https://slotslaunch.com/iframe/${id}?token=${TOKEN}`;
-  document.getElementById('modal-backdrop').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modal-backdrop').classList.remove('open');
-  document.getElementById('game-frame').src = '';
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modal-backdrop').addEventListener('click', e => {
-  if (e.target === document.getElementById('modal-backdrop')) closeModal();
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-document.querySelectorAll('.pill').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    this.classList.add('active');
-    activeProvider = this.dataset.provider;
-    applyFilters();
-  });
-});
-
-document.getElementById('search-input').addEventListener('input', function() {
-  searchTerm = this.value.toLowerCase().trim();
-  applyFilters();
-});
-
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-}
-
-// Init
+document.querySelectorAll('.pill').forEach(btn=>btn.addEventListener('click',function(){
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  this.classList.add('active'); activeProvider=this.dataset.provider; applyFilters();
+}));
+document.getElementById('search-input').addEventListener('input',function(){searchTerm=this.value.toLowerCase().trim();applyFilters();});
+function e(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 renderGrid();
 </script>
 </body>
